@@ -1,0 +1,1 @@
+/*generic Highchart component to be implemented by Anajans*/
