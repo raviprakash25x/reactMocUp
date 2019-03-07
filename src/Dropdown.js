@@ -10,11 +10,11 @@ class Dropdown extends React.Component
     }
     render()
     {
-        const optionList=<div className="dropdown"><select defaultValue={this.props.defaultValue} onChange={this.props.handleChange}>
-		                        <option value="7">Last 7 days</option>
-		                        <option value="30">Last 30 days</option>
-		                        <option value="90">Last 90 days</option>
-                        </select> </div>;
+        const optionList=<div className="dropdown"><select value={this.props.optionValue} onChange={this.props.handleChange}>
+		                    <option value="7">Last 7 days</option>
+		                    <option value="30">Last 30 days</option>
+		                    <option value="90">Last 90 days</option>
+                        </select></div>;
         return optionList;
     }
 }
