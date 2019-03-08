@@ -1,13 +1,6 @@
-/*
-Dropdown combo-box component to be implemented by Kalpit
-*/
-/*
-Dropdown combo-box component to be implemented by Kalpit
-*/
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-
 
 class Dropdown extends React.Component
 {
