@@ -33,6 +33,9 @@ export var options = {
 				showInLegend: true
 			}
 		},
+		credits:{
+			enabled:false
+		},
 	  series: [{
 			name: 'Brands',
 			colorByPoint: true,
@@ -100,6 +103,9 @@ export var bar_options = {
 						text: 'Records'
 					}
 				},
+				credits:{
+					enabled:false
+				},
 				legend: {
 					layout: 'horizontal',
 					align: 'right',
@@ -123,7 +129,7 @@ export var bar_options = {
 				series: [{
 					data:[]
 				}]	
-	}
+	};
 	
 export function get_bar_series(days){
 	var bar_series= {
@@ -175,7 +181,6 @@ export var bar_summary_colors = ['#47BDEF', '#0066ff', '#68C182', '#FFB54D', '#E
 	
 
 export var line1_options = {
-		options : {
 			title: {
 					text: ''
 			},
@@ -183,7 +188,7 @@ export var line1_options = {
 					text: ''
 			},
 			xAxis: {
-				categories: [1,2,3,4,5,6,7],
+				categories: jsonData.dates,
 				crosshair: true,
 				labels: {
 					step: 3
@@ -206,6 +211,9 @@ export var line1_options = {
 						connectorAllowed: false
 					}
 				}
+			},
+			credits:{
+				enabled:false
 			},
 
 			series: [{
@@ -232,8 +240,7 @@ export var line1_options = {
 					}
 				}]
 			}
-		}
-}
+};
 
 export function get_line1_series(days){
 
@@ -261,7 +268,6 @@ export var line1_summary_data = {
 export var line1_summary_colors = ['#000000','#0066ff', '#68C182'];
 
 export var line2_options = {
-		options : {
 			title: {
 				text: '',
 				enabled: false
@@ -296,6 +302,9 @@ export var line2_options = {
 					}
 				}
 			},
+			credits:{
+				enabled:false
+			},
 
 			series: [{
 				name: 'Outbound',
@@ -321,11 +330,9 @@ export var line2_options = {
 					}
 				}]
 			}
-		}
-}
+};
 
 export function get_line2_series(days){
-
 	var line2_series= {
 		series: [{
 					name: 'Outbound',
