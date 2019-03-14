@@ -1,0 +1,10 @@
+.dropdown select
+{
+    border: 0;
+	text-align: left;
+	padding-left:1%;
+}
+.dropdown select:focus
+{
+    outline: none;
+}

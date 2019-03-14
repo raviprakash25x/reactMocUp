@@ -1,5 +1,5 @@
-.App {
-  text-align: center;
+body {
+	background-color: #f2f2f2;
 }
 
 .App-logo {
@@ -10,7 +10,7 @@
 
 .App-header {
   background-color: #282c34;
-  min-height: 100vh;
+  min-height: 50vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -30,4 +30,53 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.CloseIcon {
+	float: right;
+	width: 1vw;
+	height: 1vw;
+	padding: 1vw;
+}
+
+.CloseIcon:hover {
+	cursor: pointer;
+}
+
+.SampleChart {
+	float: left;
+}
+
+.ExpandedView {
+	display: block;
+	position: absolute;
+	width: 100%;
+	height: 200%;
+	top: 0px;
+}
+
+.ExpandedViewBackground {
+	display: block;
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	left: 0px;
+	top: 0px;
+	background-color: black;
+	opacity: 0.6;
+}
+
+.ExpandedViewContent {
+	display: flex;
+	flex-direction: column;
+	position: absolute;
+	width: 92%;
+	overflow-y: auto;
+	left: 3%;
+	top: 3%;
+	padding-left: 1vw;
+	padding-right: 1vw;
+	padding-bottom: 1vw;
+	background-color: white;
+	border-radius: 5px;
 }

@@ -1,0 +1,87 @@
+.DisplayCard {
+	border: 0.1px solid #efefef;
+	float: left;
+	margin-left: 1vw;
+	margin-right: 0vw;
+	margin-top: 1vw;
+	margin-bottom: 0vw;
+	padding-left: 1vw;
+	padding-right: 1vw;
+	padding-top: 1vw;
+	padding-bottom: 1vw;
+	background-color: white;
+	display: flex;
+	flex-direction: column;
+	box-shadow: 0px 0.15vw 0.15vw #e6e6e6;
+}
+
+.HeaderLine {
+	display: block;
+	padding: 0px;
+	margin: 0px;
+	padding: 0.8vw;
+}
+
+.DisplayCardHeader {
+	font-family: Open Sans;
+	font-size: 1.25vw;
+	font-weight: 500;
+	float: left;
+}
+
+.SubHeaderLine {
+	width: 100%;
+	height: 10%;
+	padding-left: 0.8vw;
+}
+
+.ExpandIcon {
+	float: right;
+	width: 1.5vw;
+	height: 1.5vw;
+	opacity: 0.3;
+}
+
+.ExpandIcon:hover {
+	cursor: pointer;
+}
+
+.LeftInfoText {
+	font-family: Open Sans;
+	font-size: 0.75vw;
+	float: left;
+	color: grey;
+}
+
+.RightInfoText {
+	font-family: Open Sans;
+	font-size: 0.75vw;
+	float: right;
+	color: grey;
+	padding-right: 1vw;
+}
+
+.dot {
+	height: 0.75vw;
+	width: 0.75vw;
+	background-color: #ff9900;
+	border-radius: 50%;
+	display: inline-block;
+}
+
+.CardChart {
+	width: 100%;
+	height: 80%;
+}
+
+h3 {
+  color: #606060;
+  padding-left: 1%;
+  padding-top: 0%;
+}
+
+hr{
+	color: '#D6D6D6';
+	backgroundColor: '#D6D6D6';
+	height: 0.5
+}
