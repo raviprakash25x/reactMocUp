@@ -3,6 +3,7 @@ import closelogo from './close_logo.svg';
 import './App.css';
 import PopUpBulkApi from './popUp_bulkApi.js'
 import PopUpNativeCrm from './popUp_nativeCrm.js'
+import PopUpLeadScoring from './popUp_leadScoring.js'
 
 
 class PopUp extends React.Component {
@@ -21,8 +22,10 @@ class PopUp extends React.Component {
 				break;
 		  /*case 3:display=<PopUpPageViews/>;
 				break;
+		 */
 		  case 4:display=<PopUpLeadScoring/>;
 				break;
+		/*
 		  case 5:display=<PopUpEmailSends/>;
 				break;
 		  case 6:display=<PopUpFormSubmissions/>;

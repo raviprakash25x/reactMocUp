@@ -177,11 +177,10 @@ export var bar_summary_colors = ['#47BDEF', '#0066ff', '#68C182', '#FFB54D', '#E
 export var line1_options = {
 		options : {
 			title: {
-				text: ''
+					text: ''
 			},
-
-			subtitle: {
-				text: ''
+				subtitle: {
+					text: ''
 			},
 			xAxis: {
 				categories: [1,2,3,4,5,6,7],
@@ -264,11 +263,13 @@ export var line1_summary_colors = ['#000000','#0066ff', '#68C182'];
 export var line2_options = {
 		options : {
 			title: {
-				text: ''
+				text: '',
+				enabled: false
 			},
 
 			subtitle: {
-				text: ''
+				text: '',
+				enabled: false
 			},
 			xAxis: {
 				categories: [1,2,3,4,5,6,7],

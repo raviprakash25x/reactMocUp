@@ -87,7 +87,7 @@ class PopUpNativeCrm extends React.Component {
 	}
  
 	render() {
-		//console.log(configFile.bar_summary_data);
+		console.log(configFile.line1_options);		
 
 	return (
 		  <div>
@@ -99,7 +99,7 @@ class PopUpNativeCrm extends React.Component {
 			
 			<h3>Waiting in Queue</h3>
 			<Dropdown option = {0} optionValue={this.state.timespan_line1} handleChange={this.handleChange_line1}/>
-			<CardChart options={configFile.line1_options} series = {configFile.get_line1_series(this.state.timespan_line1)} chartCallback = {this.setDataInChart_line1}/>	
+			 <CardChart options={configFile.line1_options} series = {configFile.get_line1_series(this.state.timespan_line1)} chartCallback = {this.setDataInChart_line1}/>
 			<Summary summary_data = {configFile.line1_summary_data} colors = {configFile.line1_summary_colors}/>
 			<hr/>
 			
