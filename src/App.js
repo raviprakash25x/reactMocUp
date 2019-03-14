@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import DisplayCard from './DisplayCard'
 import './App.css';
-import PopUp from './PopUp.js';
+import PopUp from './popUp.js';
 
 class App extends Component {
 	constructor(props){
