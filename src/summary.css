@@ -1,4 +1,4 @@
-table {
+table.SummaryTable{
   width: 100%;
   height:80px;
   text-align:center;
@@ -13,6 +13,6 @@ table {
 
 .th2{
 	font-family: Open Sans;
-	font-size: 1.50vw;
+	font-size: 1.25vw;
 	font-weight: 500;
 }

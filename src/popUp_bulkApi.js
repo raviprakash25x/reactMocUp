@@ -34,6 +34,7 @@ class PopUpBulkApi extends React.Component {
   render() {
     return (
       <div>
+				<h3>Bulk API</h3>
 				<Dropdown option = {0} optionValue={this.state.timespan_stockChart} handleChange={this.handleChange_stockChart}/>
 				<CardChart options={this.state.configFile.stockChart_options} series = {this.state.configFile.stockChart_series_default} constructorType = 'stockChart' chartCallback = {this.setDataInChart_stockChart}/>
 			</div>
