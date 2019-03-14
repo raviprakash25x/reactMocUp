@@ -38,7 +38,13 @@ export var options={
             type: 'bar'
     },
     title: {
-        text: ''
+        text: '5,379',
+        style: {"fontFamily": "Open Sans", "fontSize": "1.75vw"},
+        margin: 0
+    },
+    subtitle: {
+        text: 'Total Page Views',
+        style: {"fontFamily": "Open Sans", "fontSize": "1vw"}
     },
     xAxis: {
         type: 'datetime',
@@ -76,6 +82,7 @@ export var options={
 
 export var series = {
     series: [{
+        showInLegend: false, 
         name: 'Page Views',
         data: selectAppropriateData(InputData.LeadScoreData,7)
     }]
@@ -86,11 +93,11 @@ export var line_options = {
         type: 'line'
     },
     title: {
-        text: ''
+        text: '',
     },
     yAxis: {
         title: {
-            text: '',
+            text: 'Page Views',
             },
         tickInterval:5,
     },
@@ -101,9 +108,9 @@ export var line_options = {
         },
     },
     legend: {
-        align:'right',
-        verticalAlign:'top',
-        margin:20
+        layout: 'horizontal',
+            align: 'right',
+            verticalAlign: 'top',
     },
 
     plotOptions: {
@@ -164,7 +171,7 @@ export function get_line_series(days) {
 export var line2_options = {
 			
     title: {
-        text: ''
+        text: '',
     },
     subtitle: {
         text: ''
@@ -182,9 +189,9 @@ export var line2_options = {
         },
     },
     legend: {
-        layout: 'vertical',
-        align: 'right',
-        verticalAlign: 'middle'
+            layout: 'horizontal',
+            align: 'right',
+            verticalAlign: 'top',
     },
     plotOptions: {
         series: {
@@ -272,3 +279,153 @@ export var line_summary_data = {
 
 
 export var line_summary_colors = ['#47BDEF', '#000000'];
+
+
+export var scatter_options = {
+    chart: {
+        type: 'scatter'
+
+    },
+    title: {
+        text: ''
+    },
+    xAxis: {
+        type: 'datetime',
+        dateTimeLabelFormats: {
+            millisecond: '%H:%M:%S.%L',
+            second: '%H:%M:%S',
+            minute: '%H:%M',
+            hour: '%H:%M',
+            day: '%e. %b',
+            week: '%e. %b',
+            month: '%b \'%y',
+            year: '%Y'
+        },
+        title: {
+            text: 'Date'
+        },
+        startOnTick: true,
+        endOnTick: true,
+        showLastLabel: true
+    },
+    yAxis: {
+        title: {
+            text: 'Number of occurences'
+        },
+        min: 0
+    },
+    legend: {
+        layout: 'vertical',
+        align: 'left',
+        verticalAlign: 'top',
+        x: 100,
+        y: 70,
+        floating: true,
+        backgroundColor: '#FFFFFF',
+        borderWidth: 1
+    },
+    tooltip: {
+        formatter: function () {
+            return '<b>' + this.series.name + '</b><br/>' +
+                Highcharts.dateFormat('%b %Y',
+                    new Date(this.x))
+                + ',' + this.y + ' occurences ';
+        }
+    },
+    plotOptions: {
+        scatter: {
+            marker: {
+                radius: 5,
+                states: {
+                    hover: {
+                        enabled: true,
+                        lineColor: 'rgb(100,100,100)'
+                    }
+                }
+            },
+            states: {
+                hover: {
+                    marker: {
+                        enabled: true
+                    }
+                }
+            },
+            tooltip: {
+                headerFormat: '<b>Random</b><br>'
+            }
+        },
+        series: {
+        },
+        allowPointSelect: true
+
+    },
+    series: [{
+
+        name: 'Warning Limit',
+        data: [[Date.UTC(2018, 1), 1],
+            [Date.UTC(2018, 2), 2],
+            [Date.UTC(2018, 3), 4],
+            [Date.UTC(2018, 4), 2],
+            [Date.UTC(2018, 5), 5],
+            [Date.UTC(2018, 6), 4],
+            [Date.UTC(2018, 7), 3],
+            [Date.UTC(2018, 8), 1],
+            [Date.UTC(2018, 9), 0],
+            [Date.UTC(2018, 10), 1],
+            [Date.UTC(2018, 11), 4],
+            [Date.UTC(2018, 12), 4]]
+    },
+        {
+            name: 'Critical Limit',
+            data: [[Date.UTC(2018, 1), 3],
+                [Date.UTC(2018, 2), 4],
+                [Date.UTC(2018, 3), 1],
+                [Date.UTC(2018, 4), 0],
+                [Date.UTC(2018, 5), 2],
+                [Date.UTC(2018, 6), 0],
+                [Date.UTC(2018, 7), 1],
+                [Date.UTC(2018, 8), 0],
+                [Date.UTC(2018, 9), 0],
+                [Date.UTC(2018, 10), 3],
+                [Date.UTC(2018, 11), 0],
+                [Date.UTC(2018, 12), 0]]
+        }
+    ]
+
+}
+
+
+export var scatter_series =
+    {
+    series: [{
+
+    name: 'Warning Limit',
+    data: [[Date.UTC(2018, 1), 1],
+        [Date.UTC(2018, 2), 2],
+        [Date.UTC(2018, 3), 4],
+        [Date.UTC(2018, 4), 2],
+        [Date.UTC(2018, 5), 5],
+        [Date.UTC(2018, 6), 4],
+        [Date.UTC(2018, 7), 3],
+        [Date.UTC(2018, 8), 1],
+        [Date.UTC(2018, 9), 0],
+        [Date.UTC(2018, 10), 1],
+        [Date.UTC(2018, 11), 4],
+        [Date.UTC(2018, 12), 4]]
+},
+    {
+        name: 'Critical Limit',
+        data: [[Date.UTC(2018, 1), 3],
+            [Date.UTC(2018, 2), 4],
+            [Date.UTC(2018, 3), 1],
+            [Date.UTC(2018, 4), 0],
+            [Date.UTC(2018, 5), 2],
+            [Date.UTC(2018, 6), 0],
+            [Date.UTC(2018, 7), 1],
+            [Date.UTC(2018, 8), 0],
+            [Date.UTC(2018, 9), 0],
+            [Date.UTC(2018, 10), 3],
+            [Date.UTC(2018, 11), 0],
+            [Date.UTC(2018, 12), 0]]
+    }
+]}
