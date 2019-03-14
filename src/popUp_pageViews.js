@@ -1,7 +1,6 @@
 import React from 'react'
 import CardChart from './CardChart'
 import Dropdown from './dropdown.js'
-import './DisplayCard.css';
 import Summary from './summary.js'
 
 var configFile = require('./pageViews.js');
@@ -16,6 +15,7 @@ class PopUpPageViews extends React.Component {
 		line_series: configFile.get_line_series(7),
 		//line1_series: configFile.get_line1_series(30),
         line2_series: configFile.get_line2_series(7),
+        scatter_series: configFile.scatter_series,
         line_summary: configFile.get_line_summary_data(7)
 	};
 	//console.log("hi");
@@ -62,7 +62,8 @@ class PopUpPageViews extends React.Component {
 
     return (
       <div>
-	    <h3>Page Views</h3>
+	    
+		<h3>Page Views</h3>
 		<Dropdown option = {0} optionValue={this.state.timespan_line} handleChange={this.handleChange_line}/>
 		<CardChart options={configFile.line_options} series = {this.state.line_series} />	
         <Summary summary_data = {configFile.line_summary_data} colors = {configFile.line_summary_colors}/>
@@ -70,7 +71,10 @@ class PopUpPageViews extends React.Component {
 		
 		<h3>Page Views - Average, Minimum and Maximum</h3>
 		<Dropdown option = {0} optionValue={this.state.timespan_line2} handleChange={this.handleChange_line2}/>
-		<CardChart options={configFile.line2_options} series = {this.state.line2_series} />
+        <CardChart options={configFile.line2_options} series = {this.state.line2_series} />
+
+        <h3>Historical Overload(s) in Consumption</h3>
+        <CardChart options={configFile.scatter_options} series = {this.state.scatter_series} />
 	
 	  </div>
     );
