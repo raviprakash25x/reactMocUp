@@ -34,7 +34,7 @@ class App extends Component {
 			<div className="App">
 				<DisplayCard config = {1} title = "Bulk API" leftinfotext = "Last 7 Days" rightinfotext = {[<table><tbody><tr><td>Current consumption load</td><td><div className = "dot" ></div></td></tr></tbody></table>]} onExpand = {this.displayExpandedView} width = "62%" height = "23vw"/>
 				<DisplayCard config = {2} title = "Native CRM" leftinfotext = "Last 7 Days" rightinfotext = "" onExpand = {this.displayExpandedView} width = "31%" height = "23vw"/>
-				<DisplayCard config = {1} title = "Page Views" leftinfotext = "Last 7 Days" rightinfotext = "" onExpand = {this.displayExpandedView} width = "62%" height = "23vw"/>
+				<DisplayCard config = {3} title = "Page Views" leftinfotext = "Last 7 Days" rightinfotext = "" onExpand = {this.displayExpandedView} width = "62%" height = "23vw"/>
 				 <DisplayCard config={4} title = "Lead Scoring" leftinfotext = "Last 7 Days" rightinfotext = "" onExpand = {this.displayExpandedView} width = "31%" height = "23vw"/>
 				 <DisplayCard config={1} title = "Email Sends" leftinfotext = "Last 7 Days" rightinfotext = "" onExpand = {this.displayExpandedView} width = "29.5%" height = "23vw"/>
 				<DisplayCard config={1} title = "Form Submissions" leftinfotext = "Last 7 Days" rightinfotext = "" onExpand = {this.displayExpandedView} width = "29.5%" height = "23vw"/>

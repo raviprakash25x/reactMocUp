@@ -38,11 +38,10 @@ class DisplayCard extends Component {
 		}
 		else if(configNumber === 2){
 			return require('./nativeCrm.js');
-		}
-		/*
+		}		
 		else if(configNumber == 3){
 			return require('./pageViews.js');
-		}*/
+		}
 		else if(configNumber === 4){
 			return require('./leadScoring.js');
 		}/*
