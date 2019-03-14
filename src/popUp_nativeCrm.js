@@ -78,7 +78,7 @@ class PopUpNativeCrm extends React.Component {
 	setDataInChart_line2(highChart,days){
 		if (days === undefined)
 			this.setState({chart_line2: highChart});
-		var localSeries = configFile.get_line1_series(days === undefined?this.state.timespan_stockChart:days);
+		var localSeries = configFile.get_line2_series(days === undefined?this.state.timespan_stockChart:days);
 		var index = 0, length = localSeries.series.length;
 		while (index < length){
 			highChart.series[index].setData(localSeries.series[index].data);

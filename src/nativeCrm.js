@@ -241,11 +241,11 @@ export function get_line1_series(days){
 	var line1_series= {
 		series: [{
 					name: 'Outbound',
-					data: [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30].slice(0,days),
+					data: jsonData.outbounds[3].counts.slice(0,days),
 					color: '#66ff99'
 				}, {
 					name: 'Inbound',
-					data: [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29].slice(0,days),
+					data: jsonData.inbounds[1].counts.slice(0,days),
 					color: '#0099ff'
 				}]
 	}
@@ -328,11 +328,11 @@ export function get_line2_series(days){
 	var line2_series= {
 		series: [{
 					name: 'Outbound',
-					data: [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30].slice(0,days),
+					data: jsonData.outbounds[4].counts.slice(0,days),
 					color: '#66ff99'
 				}, {
 					name: 'Inbound',
-					data: [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29].slice(0,days),
+					data: jsonData.inbounds[2].counts.slice(0,days),
 					color: '#0099ff'
 				}]
 	}
