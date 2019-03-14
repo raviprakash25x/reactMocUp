@@ -1,6 +1,6 @@
 import React from 'react'
 import closelogo from './close_logo.svg';
-import './App.css';
+import './PopUp.css';
 import PopUpBulkApi from './popUp_bulkApi.js'
 import PopUpNativeCrm from './popUp_nativeCrm.js'
 import PopUpLeadScoring from './popUp_leadScoring.js'
@@ -40,7 +40,7 @@ class PopUp extends React.Component {
 					<div className = "ExpandedViewBackground" onClick = {this.props.onClose}>
 					</div>
 					<div className = "ExpandedViewContent">
-						<div className="HeaderLine">
+						<div className="ExpandedViewHeaderLine">
 						{/*<div className="DisplayCardHeader">
 								Bulk API Syncs
 						</div>*/}

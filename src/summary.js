@@ -36,7 +36,7 @@ class Summary extends React.Component
 	  //console.log(this.props.colors);
 	  return(
         <div>
-			<table border='0'>
+			<table class = 'SummaryTable' border='0'>
 			<tbody>
 				<tr>
 					<Data data={this.props.summary_data} colors = {this.props.colors}/>
