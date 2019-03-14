@@ -1,0 +1,27 @@
+.TabButtons {
+    display: block;
+    margin-bottom: 0.9vw;
+    margin-top: 1vw;
+}
+
+.tabButton {
+    display: inline;
+    margin-left: 1vw;
+}
+
+.tabButton:hover {
+    cursor: pointer;
+}
+
+.tabButton_selected {
+    display: inline;
+    margin-left: 1vw;
+    padding-bottom: 0.7vw;
+    border-bottom-style: solid;
+    border-bottom-color: #0571cd;
+    border-bottom-width: 0.2vw;
+}
+
+.tabButton_selected:hover {
+    cursor: pointer;
+}

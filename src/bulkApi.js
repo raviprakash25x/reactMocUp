@@ -1,10 +1,7 @@
 import data from './bulkApi.json'
-import testData_90Days from './TestData_90Days.json'
-import testData2_90Days from './TestData2_90Days.json'
-import testData_30Days from './TestData_30Days.json'
-import testData2_30Days from './TestData2_30Days.json'
-import testData_7Days from './TestData_7Days.json'
-import testData2_7Days from './TestData2_7Days.json'
+import testData_90Days from './BulkApi_StockChartData_Syncs_90Days.json'
+import testData2_90Days from './BulkApi_StockChartData_Throughput_90Days.json'
+import barChartApplicationData from './BulkApi_BarChart_ApplicationData_48Hrs.json'
 
 export var options = {
 			chart: {
@@ -122,6 +119,9 @@ export var stockChart_options = {
 	},
 	scrollbar: {
 		enabled: false
+	},
+	credits: {
+		enabled: false
 	}
 }
 
@@ -145,14 +145,6 @@ export var stockChart_series_default= {
 	}]
 }
 
-export var stockChart_series_90Days= {
-	series: [{
-		data: testData_90Days
-	}, {
-		data: testData2_90Days
-	}]
-}
-
 export function get_stockChart_series(days){
 	var currData = [];
 	var currData2 = [];
@@ -173,18 +165,78 @@ export function get_stockChart_series(days){
 	return currSeries;
 }
 
-export var stockChart_series_7Days= {
+export function get_bar_options(days) {
+	var bar_options = {
+	chart: {
+		type: 'column'
+	},
+	title: {
+		text: ''
+	},
+	subtitle: {
+		text: ''
+	},
+	xAxis: {
+		categories: ['00:00','01:00','02:00','03:00','04:00','05:00','06:00','07:00','08:00','09:00','10:00','11:00','12:00','13:00','14:00','15:00','16:00','17:00','18:00','19:00','20:00','21:00','22:00','23:00','00:00','01:00','02:00','03:00','04:00','05:00','06:00','07:00','08:00','09:00','10:00','11:00','12:00','13:00','14:00','15:00','16:00','17:00','18:00','19:00','20:00','21:00','22:00','23:00'].slice(48-days,48),
+		crosshair: true,
+		labels: {
+			step: 2
+		}
+	},
+	yAxis: {
+		min: 0,
+		title: {
+			text: 'Syncs'
+		}
+	},
+	legend: {
+		layout: 'horizontal',
+		align: 'right',
+		verticalAlign: 'top'
+	},
+	tooltip: {
+		headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
+		pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
+			'<td style="padding:0"><b>{point.y:.1f} </b></td></tr>',
+		footerFormat: '</table>',
+		shared: true,
+		useHTML: true
+	},
+	plotOptions: {
+		column: {
+			pointPadding: 0.1,
+			width: 3,
+			borderWidth: 0,
+			stacking: 'normal'
+		}
+	},
 	series: [{
-		data: testData_7Days
-	}, {
-		data: testData2_7Days
-	}]
+		data:[]
+	}]	
+}
+return bar_options;
 }
 
-export var stockChart_series_30Days= {
-	series: [{
-		data: testData_30Days
-	}, {
-		data: testData2_30Days
-	}]
+export function get_bar_series(days, enabledSeries){
+	var localSeries = [];
+	for (var index = 0;index<enabledSeries.length;index++){
+		localSeries.push({name: barChartApplicationData[enabledSeries[index]][0],
+		data: barChartApplicationData[enabledSeries[index]][1].slice(48-days,48)
+		});
+	}
+	var bar_series= {
+	series: localSeries
+		};
+	return bar_series;
+}
+
+export function get_bar_series_total(days){
+	var nameWithTotal = [];
+	for (var index=0;index<barChartApplicationData.length;index++){
+		var currSeriesTotal = 0;
+		for (var dayIndex = 48-days;dayIndex < 48;dayIndex++)
+			currSeriesTotal += barChartApplicationData[index][1][dayIndex];
+		nameWithTotal.push([barChartApplicationData[index][0],currSeriesTotal]);
+	}
+	return nameWithTotal;
 }
