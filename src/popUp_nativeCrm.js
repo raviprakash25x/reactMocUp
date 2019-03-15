@@ -56,7 +56,7 @@ class PopUpNativeCrm extends React.Component {
 	setDataInChart_bar(highChart,days){
 		if (days === undefined)
 			this.setState({chart_bar: highChart});
-		var localSeries = configFile.get_bar_series(days === undefined?this.state.timespan_stockChart:days);
+		var localSeries = configFile.get_bar_series(days === undefined?this.state.timespan_bar:days);
 		var index = 0, length = localSeries.series.length;
 		while (index < length){
 			highChart.series[index].setData(localSeries.series[index].data);
@@ -67,7 +67,7 @@ class PopUpNativeCrm extends React.Component {
 	setDataInChart_line1(highChart,days){
 		if (days === undefined)
 			this.setState({chart_line1: highChart});
-		var localSeries = configFile.get_line1_series(days === undefined?this.state.timespan_stockChart:days);
+		var localSeries = configFile.get_line1_series(days === undefined?this.state.timespan_line1:days);
 		var index = 0, length = localSeries.series.length;
 		while (index < length){
 			highChart.series[index].setData(localSeries.series[index].data);
@@ -78,7 +78,7 @@ class PopUpNativeCrm extends React.Component {
 	setDataInChart_line2(highChart,days){
 		if (days === undefined)
 			this.setState({chart_line2: highChart});
-		var localSeries = configFile.get_line2_series(days === undefined?this.state.timespan_stockChart:days);
+		var localSeries = configFile.get_line2_series(days === undefined?this.state.timespan_line2:days);
 		var index = 0, length = localSeries.series.length;
 		while (index < length){
 			highChart.series[index].setData(localSeries.series[index].data);

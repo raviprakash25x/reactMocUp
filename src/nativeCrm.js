@@ -91,10 +91,10 @@ export var bar_options = {
 					text: ''
 				},
 				xAxis: {
-					categories: jsonData.dates,
 					crosshair: true,
+					type:'datetime',
 					labels: {
-						step: 3
+						format: '{value:%d %b}'
 					}
 				},
 				yAxis: {
@@ -123,7 +123,9 @@ export var bar_options = {
 					column: {
 						pointPadding: 0.1,
 						borderWidth: 0,
-						stacking: 'normal'
+						stacking: 'normal',
+						pointStart: Date.UTC(new Date().getFullYear(),new Date().getMonth(),new Date().getDate()),
+								pointInterval: 24 * 36e5
 					}
 				},
 				series: [{
@@ -188,10 +190,10 @@ export var line1_options = {
 					text: ''
 			},
 			xAxis: {
-				categories: jsonData.dates,
 				crosshair: true,
-				labels: {
-					step: 3
+				type:'datetime',
+				labels: {	
+					format: '{value:%d %b}'
 				}
 			},
 			yAxis: {
@@ -209,6 +211,13 @@ export var line1_options = {
 				series: {
 					label: {
 						connectorAllowed: false
+					},
+					pointStart: Date.UTC(new Date().getFullYear(),new Date().getMonth(),new Date().getDate()),
+								pointInterval: 24 * 36e5,
+					marker: {
+						enabled: true,
+						radius: 4,
+						symbol: 'circle'
 					}
 				}
 			},
@@ -278,10 +287,10 @@ export var line2_options = {
 				enabled: false
 			},
 			xAxis: {
-				categories: [1,2,3,4,5,6,7],
 				crosshair: true,
-				labels: {
-					step: 3
+				type:'datetime',
+				labels: {	
+					format: '{value:%d %b}'
 				}
 			},
 			yAxis: {
@@ -299,6 +308,13 @@ export var line2_options = {
 				series: {
 					label: {
 						connectorAllowed: false
+					},
+					pointStart: Date.UTC(new Date().getFullYear(),new Date().getMonth(),new Date().getDate()),
+								pointInterval: 24 * 36e5,
+					marker: {
+						enabled: true,
+						radius: 4,
+						symbol: 'circle'
 					}
 				}
 			},
